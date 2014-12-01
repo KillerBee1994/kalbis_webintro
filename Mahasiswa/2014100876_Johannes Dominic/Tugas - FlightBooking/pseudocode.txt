@@ -1,0 +1,37 @@
+flght reservation system
+
+class: [bisnis/ekonomi]
+
+jumlah penumpang: []
+
+x x x 4		}
+5 6 7 8		} 	bisnis
+x x x x		}	ekonomi
+x 14 15 16	}
+17 18 19 20	}
+
+pseudocode
+
+1. Mulai
+
+2. Buat tabel dengan loop gabungan untuk mencetak baris dan kolom tabel, beserta isi datanya 1-20 kursi penumpang. 
+
+3. Input kelas dan jumlah penumpang.
+
+4. Jika kelas yang dipilih adalah kelas bisnis maka
+	nilai kuota bisnis akhir adalah nilai kuota bisnis awal dikurangi dengan jumlah penumpang, dengan kuota awal = 8
+	
+	4.a. jika jumlah kursi terisi lebih kecil dari kuota bisnis
+	Tandai kursi dengan mencetak x sebanyak jumlah penumpang yang di input, menggantikan data nomor di tabel dari secara urut di antara 1-8
+	
+	4.b. Selain dari itu, cetak kuota tidak tersedia. Lalu ke langkah 6.
+	
+5. Jika kelas yang dipilih adalah kelas ekonomi maka
+	nilai kuota ekonomi akhir adalah nilai kuota ekonomi awal dikurangi dengan jumlah penumpang, dengan kuota awal = 12
+	
+	5.a. jika jumlah kursi terisi lebih kecil dari kuota ekonomi
+	Tandai kursi dengan mencetak x sebanyak jumlah penumpang yang di input, menggantikan data nomor di tabel dari secara urut di antara 9-20 
+	
+	5.b. Selain dari itu, cetak kuota tidak tersedia. Lalu ke langkah 6.
+	
+6. Selesai.	
