@@ -21,13 +21,13 @@ function bookingkursi()
 			next_kursi = posisi_kursi + a + 8;
 			index = next_kursi - 9;
 			document.getElementById(next_kursi).innerHTML = "<center>x<center>";
-			document.getElementById("notif").innerHTML = "Anda telah memesan kursi Ekonomi, Terima Kasih";
+			document.getElementById("notif").innerHTML = "Economy : Terima kasih telah memesan kursi";
 			kursi_eco[index] = "x";
 			}
 		}
 		else
 		{
-			document.getElementById("notif").innerHTML = "Kursi Ekonomi yang anda pesan sudah penuh atau tidak cukup";
+			document.getElementById("notif").innerHTML = "Kursi Economy yang anda pesan sudah penuh atau tidak cukup";
 		}
 	}
 	if(kelas=="Bussines")
@@ -42,13 +42,13 @@ function bookingkursi()
 			next_kursi= posisi_kursi + b ;
 			index = next_kursi - 1; 
 			document.getElementById(next_kursi).innerHTML = "<center>x<center>";
-			document.getElementById("notif").innerHTML = "Anda telah memesan kursi Bisnis, Terima Kasih";
+			document.getElementById("notif").innerHTML = "Bussines : Terima kasih telah memesan kursi";
 			kursi_bus[index] = "x";
 			}
 		}
 		else
 		{
-			document.getElementById("notif").innerHTML = "Kursi Bisnis yang anda pesan sudah penuh atau tidak cukup";
+			document.getElementById("notif").innerHTML = "Kursi Bussines yang anda pesan sudah penuh atau tidak cukup";
 		}
 	}
 
