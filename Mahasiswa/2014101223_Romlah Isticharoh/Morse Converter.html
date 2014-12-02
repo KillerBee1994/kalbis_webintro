@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Morse Converter</title>
+	<style>
+		#sisip { 
+			font-size: 30px; 
+			width: 400px;
+		}
+		
+	</style>
+</head>
+<body>
+<h2>Morse Converter</h2>
+<form action="" method="POST">
+	<textarea id="text"></textarea>
+	<br />
+	<input type="button" 
+		   value="Convert to Morse Code" 
+		   onclick="printMorse()" />
+</form>
+
+<div id="sisip"></div>
+
+<script type="text/javascript">
+
+// buat fungsi printMorse --> function printMorse()
+// ambil data dari textarea
+// dapatkan data panjang karakter
+// indexMax = panjang karakter - 1
+// buat variable untuk menampung hasil konversi morse
+// lakukan perulangan sebanyak jumlah karakter
+	// ambil karakter ke x (perulangan)
+	// konversi karakter tersebut dengan memanggil fungsi morseConvert dan menjadikan karakter tersebut menjadi inputan untuk fungsi morseConvert
+	// tambahkan hasil konversi ke variable penampung hasil konversi morse
+	// dapatkan elemen dengan id=sisip
+	// sisipkan sting hasil konversi morse
+// fungsi printMorse Berakhir
+
+// buat fungsi morseConvert --> function morseConvert(x)
+// konversi karakter menjadi huruf besar/kecil
+// periksa apakah karakter bernilai 1, b, c dst (gunakan switch case atau if else)
+// setelah di konversi, kembalikan (return) hasil konversinya
+// fungsi morseConvert berakhir
+
+</script>
+
+</body>
+</html>
