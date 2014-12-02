@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Morse Converter</title>
+	<style>
+		#sisip { 
+			font-size: 30px; 
+			width: 400px;
+		}
+		
+	</style>
+</head>
+<body>
+<h2>Morse Converter</h2>
+<form action="" method="POST">
+	<textarea id="text"></textarea>
+	<br />
+	<input type="button" 
+		   value="Convert to Morse Code" 
+		   onclick="printMorse()" />
+</form>
+
+<div id="sisip"></div>
+<script type="text/javascript">
+function printMorse() {
+	text = document.getElementById("text").value;
+	panjang = text.length;
+	indexMax = panjang - 1;
+	morse = "";
+	
+		for(a=0; a<=indexMax; a++) {
+		karakter = text.charAt(a);
+		morse = morse + "&nbsp&nbsp&nbsp" + morseConvert(karakter);
+		document.getElementById("sisip");
+		sisip.innerHTML = morse;
+		}
+}
+function morseConvert(x){
+	x = x.toLowerCase();
+	switch (x) {
+		case " ": kode="|"; break;
+		case "a": kode=".-"; break;
+		case "b": kode="-..."; break;
+		case "c": kode="-.-."; break;
+		case "d": kode="-.."; break;
+		case "e": kode="."; break;
+		case "f": kode="..-."; break;
+		case "g": kode="--."; break;
+		case "h": kode="...."; break;
+		case "i": kode=".."; break;
+		case "j": kode=".---"; break;
+		case "k": kode="-.-"; break;
+		case "l": kode=".-.."; break;
+		case "m": kode="--"; break;
+		case "n": kode="-."; break;
+		case "o": kode="---"; break;
+		case "p": kode=".--."; break;
+		case "q": kode="--.-"; break;
+		case "r": kode=".-."; break;
+		case "s": kode="..."; break;
+		case "t": kode="-"; break;
+		case "u": kode="..-"; break;
+		case "v": kode="...-"; break;
+		case "w": kode=".--"; break;
+		case "x": kode="-..-"; break;
+		case "y": kode="-.--"; break;
+		case "z": kode="--.."; break;
+		case "1": kode=".----"; break;
+		case "2": kode="..---"; break;
+		case "3": kode="...--"; break;
+		case "4": kode="....-"; break;
+		case "5": kode="....."; break;
+		case "6": kode="-...."; break;
+		case "7": kode="--..."; break;
+		case "8": kode="---.."; break;
+		case "9": kode="----."; break;
+		case "0": kode="-----"; break;
+		
+	}
+	return kode;	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Flight Booking System</title>
+	<script type ="text/javascript"
+			src ="java.js">
+	</script>
+	<style>
+	#notif {
+			border-style: solid;
+			border-width: 3px;
+			text-align: center;
+			background-color: yellow;
+			}
+	</style>
+	</head>
+	
+<body>
+<h2>Flight Reservation System</h2>
+
+<table>
+<form action="" method = "POST">
+	<tr>
+		<td>
+			<label>Class</label>
+		</td>
+		<td>
+			<select id ="kelas">
+			<option value = "Bussines" > Bussines </option>
+			<option value = "Economy"  > Economy </option>
+			</select>	
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<label>Jumlah Penumpang</label>
+		</td>
+		<td>
+			<input 	id ="jml"
+			type ="text" 
+			name ="Jumlah Penumpang" 
+			value ="" />
+		</td>
+	<tr>
+		<td>
+			<input 	type="button" 
+			value="Booking" 
+			onclick="bookingkursi();" />
+		</td>
+	</tr>
+</form>
+</table>
+<br/>
+			<div id="notif"> </div>	<br/>
+
+<center>
+<table border="1" height= "150px" width="150px">
+
+<script type="text/javascript">
+	var x=1
+	for(a=1;a<=5;a++)
+	{
+		document.write("<tr>");
+			for(b=1;b<=4;b++)
+			{
+				document.write('<td id="' + x + '">');
+				document.write("<center>" + x + "<center>");
+				document.write("</td>");
+				x++;
+			}
+		document.write("</tr>");
+		
+	}
+</script>
+</table>
+</center>
+</body>
+</html>
