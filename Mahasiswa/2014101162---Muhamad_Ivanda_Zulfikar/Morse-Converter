@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Morse Converter</title>
+	<style>
+		#sisip {
+		font-size: 36px;
+		color: blue;
+		}
+	</style>
+</head>
+<body>
+<h3>Morse Converter</h3>
+<textarea id="ta"></textarea>
+<form action="" method="post">
+<input type="button" value="Convert to Morse Code" id="tombolconvert" onclick="printMorse();" />
+</form>
+<script type="text/javascript">
+function morseConvert(x){
+var ubah = x.toLowerCase();
+	switch (ubah) {
+	case "a" : kode = ".-"; break;
+	case "b" : kode = "-..."; break;
+	case "c" : kode = "-.-."; break;
+	case "d" : kode = "-.."; break;
+	case "e" : kode = "."; break;
+	case "f" : kode = "..-."; break;
+	case "g" : kode = "--."; break;
+	case "h" : kode = "...."; break;
+	case "i" : kode = ".."; break;
+	case "j" : kode = ".---"; break;
+	case "k" : kode = "-.-"; break;
+	case "l" : kode = ".-.."; break;
+	case "m" : kode = "--"; break;
+	case "n" : kode = "-."; break;
+	case "o" : kode = "---"; break;
+	case "p" : kode = ".--."; break;
+	case "q" : kode = "--.-"; break;
+	case "r" : kode = ".-."; break;
+	case "s" : kode = "..."; break;
+	case "t" : kode = "-"; break;
+	case "u" : kode = "..-"; break;
+	case "v" : kode = "...-"; break;
+	case "w" : kode = ".--"; break;
+	case "x" : kode = "-..-"; break;
+	case "y" : kode = "-.--"; break;
+	case "z" : kode = "--.."; break;
+	case "1" : kode = ".----"; break;
+	case "2" : kode = "..---"; break;
+	case "3" : kode = "...--"; break;
+	case "4": kode = "....-"; break;
+	case "5" : kode = "....."; break;
+	case "6" : kode = "-...."; break;
+	case "7" : kode = "--..."; break;
+	case "8" : kode = "---.."; break;
+	case "9" : kode = "----."; break;
+	case "0" : kode = "-----"; break;
+	case " " : kode = "|"; break;
+}
+return kode;
+}
+function printMorse(){
+var textSource = document.getElementById("ta").value;
+panjang = textSource.length;
+indexMax = panjang - 1;
+cetakMorse = "";
+for(i=0; i<=indexMax; i++)
+{
+	karakter = textSource.charAt(i);
+	cetakMorse = cetakMorse + "&nbsp &nbsp &nbsp" + morseConvert(karakter);
+	document.getElementById("sisip").innerHTML = cetakMorse;
+}
+}
+</script>
+<div id="sisip"></div>
+</body>
+</html>
