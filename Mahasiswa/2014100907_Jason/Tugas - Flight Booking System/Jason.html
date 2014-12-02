@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Jason 2014100907</title>
+<style>
+ *{
+	font-family: Comic sans ms;
+ }
+ 
+ table tr td{
+	color: blue;
+	font-size: 40px;
+	padding-left: 18px;
+ }
+ 
+ #komen {
+	background-color:yellow; 
+	width:300px; 
+	height:40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: red;
+	padding-top: 7px;
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+<center>
+<h1>Flight Booking System</h1>
+<form action="" method="post">
+Kelas: <select id="kelas">
+			<option value=1>Bisnis</option>
+			<option value=2>Ekonomi</option>
+		</select>
+<br/>
+Jumlah Penumpang: <input type="text" id="jml" />
+<br/>
+<br/>
+<input type="button" value="Booking" onclick="booking()" />
+</form>
+<div id="komen"></div>
+<table border="1" width="300px" height="400px">
+<script type="text/javascript">
+x=1;
+for(a=1;a<=5;a++){
+	document.write("<tr>");
+	for(b=1;b<=4;b++){
+		document.write("<td id='" + x + "'>" + x + "</td>");
+		x++;
+	}
+	document.write("</tr>");
+}
+</script>
+</table>
+
+<script type="text/javascript">
+kursi_eko = [];
+kursi_bis = [];
+sisa_kursi_eko = 12;
+sisa_kursi_bis = 8;
+
+function booking(){
+	kelas = document.getElementById("kelas").value;
+	jml = document.getElementById("jml").value;
+	
+	if(kelas==2){
+		sisa_kursi_eko = 12 - kursi_eko.length;
+		posisi_kursi2 = kursi_eko.length;
+		if(sisa_kursi_eko >= 1 && jml <= sisa_kursi_eko){
+			for(c=1;c<=jml; c++){
+				next_kursi2 = posisi_kursi2 + c + 8;
+				index2 = next_kursi2 - 9;
+				document.getElementById(next_kursi2).innerHTML = "X";
+				kursi_eko[index2] = "x";
+			}
+			document.getElementById("komen").innerHTML = "Booking Sukses";
+		}
+		else {
+			document.getElementById("komen").innerHTML = "Kursi Ekonomi tidak mencukupi";
+		}
+	}
+	
+	if(kelas==1){
+		sisa_kursi_bis = 8 - kursi_bis.length;
+		posisi_kursi = kursi_bis.length;
+		if(sisa_kursi_bis >= 1 && jml <= sisa_kursi_bis){
+			for(d=1;d<=jml;d++){
+				next_kursi = posisi_kursi + d;
+				index = next_kursi - 1;
+				document.getElementById(next_kursi).innerHTML = "X";
+				kursi_bis[index] = "x"
+			}
+			document.getElementById("komen").innerHTML = "Booking Sukses";
+		}
+		else {
+		document.getElementById("komen").innerHTML = "Kursi Bisnis tidak mencukupi";
+		}
+	}
+}
+</script>
+</center>
+</body>
+</html>
