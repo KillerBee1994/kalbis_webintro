@@ -58,11 +58,11 @@ jml = parseInt(jml);
 //periksa apakah kuota kursi msih mencukupi
 //jika masih cukup, tambahkan penumpang
 if(kelas==2){
-sisa_kursi_eco -= kursi_eco.length;
+sisa_kursi_eco = 12 - kursi_eco.length;
 posisi_kursi2 = kursi_eco.length;
 
 		if(sisa_kursi_eco>= 1 && jml <= sisa_kursi_eco){
-		document.getElementById("notif").innerHTML = "";
+		document.getElementById("notif").innerHTML = "Kursi ekonomi telah dipesan, terima kasih.";
 		//tambahkan kursi
 			for(d=1;d<=jml;d++){
 			next_kursi2 = posisi_kursi2 + d + 8;
@@ -77,11 +77,11 @@ posisi_kursi2 = kursi_eco.length;
 		}
 }
 if(kelas==1){
-sisa_kursi_bus -= kursi_bus.length;
+sisa_kursi_bus = 8 - kursi_bus.length;
 posisi_kursi1= kursi_bus.length;
 
 		if(sisa_kursi_bus>= 1 && jml <= sisa_kursi_bus){
-		document.getElementById("notif").innerHTML = "";
+		document.getElementById("notif").innerHTML = "Kursi bisnis telah dipesan, terima kasih.";
 		//tambahkan kursi
 			for(d=1;d<=jml;d++){
 			next_kursi1= posisi_kursi1 + d ;
