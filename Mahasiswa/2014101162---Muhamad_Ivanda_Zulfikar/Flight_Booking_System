@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title> Flight Booking System</title>
+</head>
+<body>
+<center>
+<h1> Flight Booking System </h1>
+<br/><br/>
+<form action="" method="POST">
+<table>
+	<tr>
+		<td> Class : </td> 
+		<td> <select id="kelas" name="kelas">
+			<option value= 1> Bussiness </option>
+			<option value= 2> Economy </option>
+		</select> </td>
+	</tr>
+	
+	<tr>
+		<td> Jumlah penumpang : </td>
+		<td> <input type="text" id="jmlh"/> </td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"> <input type="button" id="booking" value="Book" onclick="Kursi()"/> <td>
+	</tr>
+</table>
+</form>
+<table border="1">
+	<tr>
+		<td> <div style="background-color:blue;color:white;" id="keluaran"></div> </td>
+	</tr>
+</table>
+<table border="1" width="200" height="350" style="margin-left:50px;">
+<script type="text/javascript">
+	var x=1
+	for(row=1;row<=5;row++){
+	document.write("<tr>");
+		for(col=1;col<=4;col++){
+		document.write('<td id="'+ x +'">');
+		document.write(x);
+		document.write("</td>");
+		x++;
+		}
+	document.write("</tr>");
+		
+	}
+</script>
+</table>
+
+<script type="text/javascript">
+kursi_eco = [];
+kursi_bus = [];
+sisa_kursi_eco = 12;
+sisa_kursi_bus = 8;
+function Kursi(){
+do{
+kelas = document.getElementById("kelas").value;
+jml = document.getElementById("jmlh").value;
+jml = parseInt(jml);
+if(kelas==2){
+sisa_kursi_eco -= kursi_eco.length;
+posisi_kursi2 = kursi_eco.length;
+		if(sisa_kursi_eco>= 1 && jml <= sisa_kursi_eco){
+		document.getElementById("keluaran").innerHTML = "";
+		
+			for(d=1;d<=jml;d++){
+			next_kursi2 = posisi_kursi2 + d + 8;
+			index2 = next_kursi2 - 9;
+			document.getElementById(next_kursi2).innerHTML = "x";
+			kursi_eco[index2] = "x";
+			}
+		}
+		else{
+		
+		document.getElementById("keluaran").innerHTML = "Kursi ekonomi tidak mencukupi";
+		}
+}
+if(kelas==1){
+sisa_kursi_bus -= kursi_bus.length;
+posisi_kursi1= kursi_bus.length;
+		if(sisa_kursi_bus>= 1 && jml <= sisa_kursi_bus){
+		document.getElementById("keluaran").innerHTML = "";
+		
+			for(d=1;d<=jml;d++){
+			next_kursi1= posisi_kursi1 + d ;
+			index1 = next_kursi1 - 1; 
+			document.getElementById(next_kursi1).innerHTML = "x";
+			kursi_bus[index1] = "x";
+			}
+		}
+		else{
+		
+		document.getElementById("keluaran").innerHTML = "Kursi bussiness tidak mencukupi";
+		}
+}
+}while(sisa_kursi_eko!=0 && sisa_kursi_bus!=0);
+}
+</script>
+</center>
+</body>
+</html>
