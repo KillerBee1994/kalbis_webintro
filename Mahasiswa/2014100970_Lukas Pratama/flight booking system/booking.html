@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Flight Booking System</title>
+	<link type="text/css" href="style.css" rel="stylesheet" />
+	<script type="text/javascript" src="function.js"></script>
+</head>
+<body>
+
+<h2>Flight Reservation System</h2>
+
+<br />
+
+<form action="" method="POST">
+Class &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: &nbsp;
+<select id="class" name="class">
+	<option value = 1> Bussiness </option>
+	<option value = 2> Economy </option>
+</select>
+
+<br />
+<br />	
+
+Jumlah penumpang &nbsp; &nbsp; : &nbsp;
+<input type="text"
+	   id="jml"
+	   value="" />
+	   
+<br />
+<br />
+
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="button"
+	   id="booking"
+	   value="Book"
+	   onclick="bookingKursi()" />
+	   
+<br />
+<br />
+
+</form>
+<h3>Notification:</h3>
+<div id="notif"></div>
+
+<br />
+
+<table border="1" width="200" height="350">
+<script type="text/javascript">
+	var x=1
+	for(row=1;row<=5;row++)
+	{
+		document.write("<tr>");
+			for(col=1;col<=4;col++)
+			{
+				document.write('<td id="'+ x +'">');
+				document.write(x);
+				document.write("</td>");
+				x++;
+			}
+		document.write("</tr>");
+		
+	}
+</script>
+
+</table>
+
+</body>
+</html>
