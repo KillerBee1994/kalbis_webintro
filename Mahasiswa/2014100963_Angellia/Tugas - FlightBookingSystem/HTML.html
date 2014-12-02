@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> FLIGHT RESERVATION SYSTEM </title>
+</head>
+<body>	
+<h1 style="color: pink"> FLIGHT BOOKING SYSTEM </h1>
+<form action=" " method="post">
+	Class
+	<select name="class" id="kls">
+		<option value="1"> Business </option>
+		<option value="2"> Economy </option>
+	</select>
+</br> </br>
+	Number of passenger 
+	<input type="text" id="jml" />
+</br> </br>
+	<input type="button" value="BOOKING" onclick="angel();"/>
+</br> </br>
+</form>
+	
+<table border=1; width=200px; height=250px>
+<script type="text/javascript">
+	c=1;
+	for(a=1; a<=5; a++) {
+		document.write("<tr>");
+			for(b=1; b<=4; b++) { 
+				document.write("<td id='" + c + "'>");
+				document.write(c);
+				c++;
+				document.write("</td>");
+			}
+		document.write("</tr>");
+	}
+</script>
+</table>	
+
+<script type="text/javascript">
+kursie = [];
+kursib = [];
+
+kuotab = 8;
+kuotae = 12;
+
+function angel() {
+	kelas = document.getElementById ("kls").value;
+	jumlah = document.getElementById ("jml").value;
+	jumlah = parseInt (jumlah);
+	
+		if (kelas == 2) {
+			kuotae = 12 - kursie.length;
+			posisie = kursie.length;
+			if (kuotae >= 1 && jumlah <= kuotae) {
+				for (i=1; i<=jumlah; i++) {
+					nexte = posisie + i + 8;
+					indexe = nexte - 9;
+					document.getElementById(nexte).innerHTML="X";
+					kursie[indexe] = "X";
+				}
+			} 
+			else { document.getElementById ("text").innerHTML="KURSI EKONOMI TIDAK MENCUKUPI!"
+			}
+		}
+		
+		if (kelas == 1) {
+			kuotab = 8 - kursib.length;
+			posisib = kursib.length;
+			if (kuotab >= 1 && jumlah <= kuotab) {
+				for (i=1; i<=jumlah; i++) {
+					nextb = posisib + i;
+					indexb = nextb - 1;
+					document.getElementById(nextb).innerHTML="X";
+					kursib[indexb] = "X";
+				}
+			} 
+			else { document.getElementById ("text").innerHTML="KURSI BISNIS TIDAK MENCUKUPI!"
+			}
+		}
+}	
+</script>	
+
+<div id="text" style="color: pink; margin-top: 20px">
+<br/> <br/>
+</div>
+</body>
+</html> 
