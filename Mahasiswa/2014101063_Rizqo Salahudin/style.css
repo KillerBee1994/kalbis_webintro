@@ -1,0 +1,11 @@
+
+#table td{
+	font-size:25px;
+	margin-left:5px;
+}
+
+#notif{
+	background-color:green;
+	color:blue;
+	font-size:25px;
+}
