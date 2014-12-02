@@ -1,0 +1,92 @@
+<! DOCTYPE html>
+<html>
+<head>
+	<title>KODE MORSE</title>
+<style> 
+	#sisip {
+	width: 100%;
+	}
+</style>
+</head>
+<body>
+<h1>KODE MORSE</h1>
+
+<form action="" method="POST">
+	<textarea id="terjemahan">
+	</textarea> 
+		<br/>
+	<input 	type="button"; 
+			value="Kode Morse"; 
+			onclick="translate()" />
+	<input 	type="reset"; 
+			value="Ulangi"/>
+</form>
+	
+<div id="sisip"> </div>
+	
+<script type="text/javascript">
+
+// fungsi translate ke kode morse
+function translate() {
+	kata = document.getElementById("terjemahan").value;
+	panjang = kata.length;
+	indexmax = panjang - 1;
+	cetak = "";
+	n = 0;
+	do {
+		huruf = kata.charAt(n);
+
+		cetak += "&nbsp " + morse(huruf);
+		document.getElementById("sisip").innerHTML = cetak;
+		n++;
+	} 
+	while(n<=indexmax);
+}
+
+// fungsi morse per huruf
+function morse(n) {
+n = n.toLowerCase();
+switch(n) {
+	case "a" : kode = ".-"; break;
+	case "b" : kode = "-..."; break;
+	case "c" : kode = "-.-."; break;
+	case "d" : kode = "-.."; break;
+	case "e" : kode = "."; break;
+	case "f" : kode = "..-."; break;
+	case "g" : kode = "--."; break;
+	case "h" : kode = "...."; break;
+	case "i" : kode = ".."; break;
+	case "j" : kode = ".---"; break;
+	case "k" : kode = "-.-"; break;
+	case "l" : kode = ".-.."; break;
+	case "m" : kode = "--"; break;
+	case "n" : kode = "-."; break;
+	case "o" : kode = "---"; break;
+	case "p" : kode = ".--."; break;
+	case "q" : kode = "--.-"; break;
+	case "r" : kode = ".-."; break;
+	case "s" : kode = "..."; break;
+	case "t" : kode = "-"; break;
+	case "u" : kode = "..-"; break;
+	case "v" : kode = "...-"; break;
+	case "w" : kode = ".--"; break;
+	case "x" : kode = "-..-"; break;
+	case "y" : kode = "-.--"; break;
+	case "z" : kode = "--.."; break;
+	case "1" : kode = ".----"; break;
+	case "2" : kode = "..---"; break;
+	case "3" : kode = "...--"; break;
+	case "4" : kode = "....-"; break;
+	case "5" : kode = "....."; break;
+	case "6" : kode = "-...."; break;
+	case "7" : kode = "--..."; break;
+	case "8" : kode = "---.."; break;
+	case "9" : kode = "----."; break;
+	case "0" : kode = "-----"; break;
+	case " " : kode = "//"; break;
+	}
+return kode;
+}
+</script>
+</body>
+</html>
