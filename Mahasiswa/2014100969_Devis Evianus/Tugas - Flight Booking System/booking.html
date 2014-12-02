@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Flight Booking System</title>
+	<link type="text/css" href="style.css" rel="stylesheet" />
+	<script type="text/javascript" src="function.js"></script>
+</head>
+<body>
+
+<h2>Flight Reservation System</h2>
+
+<br />
+
+<form action="" method="POST">
+Kelas &nbsp; &nbsp; &nbsp; : &nbsp;
+<select id="kelas" name="kelas">
+	<option value = 1> Bussiness </option>
+	<option value = 2> Economy </option>
+</select>
+
+<br />
+<br />	
+
+Jumlah &nbsp; &nbsp; : &nbsp;
+<input type="text"
+	   id="jml"
+	   value="" />
+	   
+<br />
+<br />
+
+<input type="button"
+	   id="booking"
+	   value="Book"
+	   onclick="bookingKursi()" />
+	   
+<br />
+<br />
+
+</form>
+
+<div id="pesan"></div>
+
+<br />
+
+<table border="1" width="200" height="350">
+
+<script type="text/javascript">
+	var x=1
+	for(row=1;row<=5;row++)
+	{
+		document.write("<tr>");
+			for(col=1;col<=4;col++)
+			{
+				document.write('<td id="'+ x +'">');
+				document.write(x);
+				document.write("</td>");
+				x++;
+			}
+		document.write("</tr>");
+		
+	}
+</script>
+
+</table>
+
+</body>
+</html>
