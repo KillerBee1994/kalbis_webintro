@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Morse Converter </title>
+</head>
+<body>
+<form action="" method="GET">
+<h1> Morse Converter </h1>
+<textarea id="text"></textarea> <br/>
+<input type="button" value="Convert to Morse Code" onclick="printMorse()"/>
+<br/>
+</form>
+<div id="sisip"></div>
+<script type="text/javascript">
+
+// buat fungsi printMorse --> function printMorse()
+function printMorse() {
+// ambil data dari textarea
+var txt = document.getElementById("text").value;
+// dapatkan data panjang karakter
+panjang = txt.length;
+//document.write(panjang);
+// indexMax = panjang karakter - 1
+indexMax = panjang - 1;
+// buat variable untuk menampung hasil konversi morse
+var konversi;
+// lakukan perulangan sebanyak jumlah karakter
+for (i=0;i<=indexMax;i++) {
+	// ambil karakter ke x (perulangan)
+	karakter = txt.charAt(i);
+	// konversi karakter tersebut dengan memanggil fungsi morseConvert dan menjadikan karakter tersebut menjadi inputan untuk fungsi morseConvert
+	// tambahkan hasil konversi ke variable penampung hasil konversi morse
+	konversi += morseConvert(karakter);
+	// dapatkan elemen dengan id=sisip
+	sisip = document.getElementById("sisip");
+	// sisipkan sting hasil konversi morse
+	sisip.innerHTML = konversi;
+}
+// fungsi printMorse Berakhir
+}
+
+function morseConvert(i){
+
+	switch(i) {
+		case "a" : kode = ".- "; break;
+		case "b" : kode = "-... "; break;
+		case "c" : kode = "-.-. "; break;
+		case "d" : kode = "--. "; break;
+		case "e" : kode = ". "; break;
+		case "f" : kode = "..-. "; break;
+		case "g" : kode = "--. "; break;
+		case "h" : kode = ".... "; break;
+		case "i" : kode = ".. "; break;
+		case "j" : kode = ".--- "; break;
+		case "k" : kode = "-.- "; break;
+		case "l" : kode = ".-.. "; break;
+		case "m" : kode = "-- "; break;
+		case "n" : kode = "-. "; break;
+		case "o" : kode = "--- "; break;
+		case "p" : kode = ".--. "; break;
+		case "q" : kode = "--.- "; break;
+		case "r" : kode = ".-. "; break;
+		case "s" : kode = "... "; break;
+		case "t" : kode = "- "; break;
+		case "u" : kode = "..- "; break;
+		case "v" : kode = "...- "; break;
+		case "w" : kode = ".-- "; break;
+		case "x" : kode = "-..- "; break;
+		case "y" : kode = "-.-- "; break;
+		case "z" : kode = "--.. "; break;
+		case "1" : kode = ".---- "; break;
+		case "2" : kode = "..--- "; break;
+		case "3" : kode = "...-- "; break;
+		case "4" : kode = "....- "; break;
+		case "5" : kode = "..... "; break;
+		case "6" : kode = "-.... "; break;
+		case "7" : kode = "--... "; break;
+		case "8" : kode = "---.. "; break;
+		case "9" : kode = "----. "; break;
+		case "0" : kode = "----- "; break;
+	}
+	return kode;	
+}
+</script>
+</body>
+</html>
